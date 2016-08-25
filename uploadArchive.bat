@@ -1,0 +1,1 @@
+cd retrofit-api&gradle uploadArchives&cd ..&cd base&gradle uploadArchives&cd ..

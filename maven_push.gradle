@@ -1,0 +1,19 @@
+apply plugin: 'maven'
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: MAITIAN_REPOSITORIES_PATH) {
+                authentication(userName: MAITIAN_REPOSITORIES_USERNAME, password: MAITIAN_REPOSITORIES_PASSWORD)
+            }
+            pom.project {
+                version android.defaultConfig.versionName
+                artifactId project.name
+                groupId 'cn.maitian.maitian'
+                packaging 'aar'
+                description 'wrap library'
+            }
+        }
+    }
+}

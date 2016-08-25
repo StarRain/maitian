@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0.5"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", '"XXX"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", "BASE_URL", '"XXX"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'cn.maitian.common:appcompat-v7:1.0.0'
+    compile 'cn.maitian.common:multidex:1.0.0'
+    compile 'cn.maitian.common:eventbus:1.0.2'
+    compile 'cn.maitian.common:glide:1.0.3'
+    compile 'cn.maitian.maitian:retrofit-api:1.0.8'
+}
+
+apply from: '../maven_push.gradle'

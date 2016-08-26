@@ -17,6 +17,11 @@ allprojects {
         jcenter()
         maven { url MAITIAN_REPOSITORIES_PATH }
     }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
 }
 
 task clean(type: Delete) {

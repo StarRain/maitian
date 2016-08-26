@@ -17,9 +17,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
  */
 public class GlideUtil {
     // -----------------activity-----------------
-    public static void loadTransformationImage(FragmentActivity activity, String url, int placeholder, int error, Transformation<Bitmap> transformation, ImageView imageView) {
+    public static void loadTransformationImage(FragmentActivity activity, String url, int placeholder, int error, ImageView imageView, Transformation<Bitmap>[] transformations) {
         config(Glide.with(activity), url, placeholder, error)
-                .bitmapTransform(transformation)
+                .bitmapTransform(transformations)
                 .into(imageView);
     }
 
@@ -28,9 +28,9 @@ public class GlideUtil {
     }
 
     // -----------------fragment-----------------
-    public static void loadTransformationImage(Fragment fragment, String url, int placeholder, int error, Transformation<Bitmap> transformation, ImageView imageView) {
+    public static void loadTransformationImage(Fragment fragment, String url, int placeholder, int error, ImageView imageView, Transformation<Bitmap>[] transformations) {
         config(Glide.with(fragment), url, placeholder, error)
-                .bitmapTransform(transformation)
+                .bitmapTransform(transformations)
                 .into(imageView);
     }
 

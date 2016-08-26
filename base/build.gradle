@@ -8,7 +8,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0.7"
+        versionName "1.0.8"
     }
     buildTypes {
         debug {
@@ -22,12 +22,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'cn.maitian.common:appcompat-v7:1.0.0'
+    compile 'cn.maitian.common:support-v4:1.0.0'
     compile 'cn.maitian.common:multidex:1.0.0'
     compile 'cn.maitian.common:eventbus:1.0.2'
     compile 'cn.maitian.common:glide:1.0.3'

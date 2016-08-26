@@ -8,7 +8,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0.8"
+        versionName "1.0.10"
     }
     buildTypes {
         debug {
@@ -36,6 +36,8 @@ dependencies {
     compile 'cn.maitian.common:multidex:1.0.0'
     compile 'cn.maitian.common:eventbus:1.0.2'
     compile 'cn.maitian.common:glide:1.0.3'
+    compile 'cn.maitian.common:glide:1.0.3'
+    compile 'cn.maitian.common:secure-pref-manager:1.0.5'
     compile 'cn.maitian.maitian:retrofit-api:1.0.+'
 }
 

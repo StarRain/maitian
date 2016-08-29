@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import cn.maitian.analytics.AnalyticsUtil;
 import cn.maitian.eventbus.EventUtil;
 import cn.maitian.eventbus.event.BaseEvent;
 import cn.maitian.retrofit_api.RetrofitApi;
@@ -27,6 +28,18 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EventUtil.register(this);
         mRetrofitApi = BaseApplication.getBaseApplication().getRetrofitApi();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AnalyticsUtil.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AnalyticsUtil.onPause(this);
     }
 
     @Override

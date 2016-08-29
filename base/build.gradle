@@ -13,11 +13,23 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "BASE_URL", '"http://127.0.0.1:8081/nexus/content/repositories/maitian/cn/maitian/maitian/base/"'
+            buildConfigField "String", "WEIXIN_APPID", '"wxc6b49c22d5bba043"'
+            buildConfigField "String", "WEIXIN_SECRET", '"1bf62fe68c3556446b4cc467e57c0e06"'
+            buildConfigField "String", "QQ_APPID", '"1103682262"'
+            buildConfigField "String", "QQ_SECRET", '"S5l3fVleHEFzwBOZ"'
+            buildConfigField "String", "SINA_APPKEY", '"1815917581"'
+            buildConfigField "String", "SINA_SECRET", '"1e0d00856e1f0145e6f9a0a7f01e7685"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             buildConfigField "String", "BASE_URL", '"http://127.0.0.1:8081/nexus/content/repositories/maitian/cn/maitian/maitian/base/"'
+            buildConfigField "String", "WEIXIN_APPID", '"wxc6b49c22d5bba043"'
+            buildConfigField "String", "WEIXIN_SECRET", '"1bf62fe68c3556446b4cc467e57c0e06"'
+            buildConfigField "String", "QQ_APPID", '"1103682262"'
+            buildConfigField "String", "QQ_SECRET", '"S5l3fVleHEFzwBOZ"'
+            buildConfigField "String", "SINA_APPKEY", '"1815917581"'
+            buildConfigField "String", "SINA_SECRET", '"1e0d00856e1f0145e6f9a0a7f01e7685"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -38,7 +50,9 @@ dependencies {
     compile 'cn.maitian.common:glide:1.0.3'
     compile 'cn.maitian.common:glide:1.0.3'
     compile 'cn.maitian.common:secure-pref-manager:1.0.5'
-    compile 'cn.maitian.maitian:retrofit-api:1.0.+'
+    compile 'cn.maitian.maitian:retrofit-api:1.0.8'
+    compile 'cn.maitian.common:analytics:1.0.1'
+    compile 'cn.maitian.common:social-sdk:1.0.4'
 }
 
 apply from: '../maven_push.gradle'

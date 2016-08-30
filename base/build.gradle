@@ -8,7 +8,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0.13"
+        versionName "1.0.15"
     }
     buildTypes {
         debug {
@@ -52,7 +52,7 @@ dependencies {
     compile 'cn.maitian.common:secure-pref-manager:1.0.5'
     compile 'cn.maitian.maitian:retrofit-api:1.0.8'
     compile 'cn.maitian.common:analytics:1.0.1'
-    compile 'cn.maitian.common:social-sdk:1.0.4'
+    compile 'cn.maitian.common:social-sdk:1.0.6'
 }
 
 apply from: '../maven_push.gradle'

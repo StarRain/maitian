@@ -26,7 +26,6 @@ public class BaseApplication extends MultiDexApplication {
         sBaseApplication = this;
         mRetrofit = RetrofitUtils.initClient(this, BuildConfig.BASE_URL, BuildConfig.APPLICATION_ID, BuildConfig.FLAVOR, BuildConfig.VERSION_NAME, String.valueOf(cn.maitian.multidex.BuildConfig.VERSION_CODE));
         mRetrofitApi = RetrofitApiUtil.createRetrofitApi(mRetrofit);
-        initSocial();
     }
 
     public Retrofit getRetrofit() {
@@ -37,8 +36,9 @@ public class BaseApplication extends MultiDexApplication {
         return mRetrofitApi;
     }
 
-    private void initSocial() {
-        SocialSdk.init();
+    public void initSocial(boolean isLog, boolean isTip) {
+        SocialSdk.initLog(isLog);
+        SocialSdk.initTip(isTip);
         SocialSdk.setSinaWeibo(BuildConfig.SINA_APPKEY, BuildConfig.SINA_SECRET);
         SocialSdk.setWeixin(BuildConfig.WEIXIN_APPID, BuildConfig.WEIXIN_SECRET);
         SocialSdk.setQQZone(BuildConfig.QQ_APPID, BuildConfig.QQ_SECRET);

@@ -16,7 +16,7 @@ allprojects {
     repositories {
         jcenter()
         maven { url "https://jitpack.io" }
-        maven { url MAITIAN_REPOSITORIES_PATH }
+        maven { url "http://127.0.0.1:8081/nexus/content/repositories/maitian/" }
     }
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {

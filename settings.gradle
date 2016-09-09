@@ -1,1 +1,3 @@
-include ':app', ':base', ':retrofit-api'
+include ':app'
+include ':base'
+include ':retrofit-api'
